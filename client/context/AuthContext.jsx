@@ -17,9 +17,9 @@ export const AuthProvider = ({ children }) => {
   const checkAuth = async () => {
     try {
       const token = localStorage.getItem("token");
-      console.log("Token before sending to backend:", token);
+      // console.log("Token before sending to backend:", token);
       const { data } = await axios.get("/api/auth/check");
-       console.log("Backend /check response:", data); 
+      //  console.log("Backend /check response:", data); 
       if (data.success) {
         setAuthUser(data.user);
         connectSocket(data.user);
